@@ -16,9 +16,9 @@
 
 -[Built With](https://github.com/gilorcilla/code-quiz#built-with)
 
--[Test]
+-[Test](https://github.com/gilorcilla/code-quiz#test)
 
--[License]
+-[License](https://github.com/gilorcilla/code-quiz#test)
 
 ### Description
 
