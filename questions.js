@@ -11,5 +11,12 @@ const questions = [
 
     },
     {
-        question: 
+        question: "What is the correct syntax for referring to an external script called geek.js?"
+        answers: [
+            { text: "<script src= 'geek.js'>"}
+            { text: "<script href= 'geek.js'>"}
+            { text: "<script ref = 'geek.js'>"}
+            { text: "<script name= 'geek.js'>"}
+        ]
+        correct: "<script src= 'geek.js'>"
     }
