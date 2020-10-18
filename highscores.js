@@ -17,3 +17,29 @@ function renderInitials() {
     initialsList.appendChild(li);
   }
 }
+function init() {
+  var storedInitials = JSON.parse(localStorage.getItem("initialsScores"));
+  if (storedInitials !== null) {
+      initialsScores = storedInitials;
+  }
+  renderInitials();
+}
+function storedInitials() {
+  localStorage.setItem("initialScores", JSON.stringify(initialsScores));
+}
+// Form Submitted
+initialsForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  var initialsText = initialsInput.nodeValue.trim();
+  If (initialsText === "") {
+      return;
+  }
+  initialsScores.push(inititialsText)
+  initialsInput.value = "";
+  
+  storeInitials();
+  renderInitials();
+
+
+});
