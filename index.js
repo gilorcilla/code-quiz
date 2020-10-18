@@ -40,6 +40,52 @@ $(document).ready(function () {
       lastScore();
       $(".highscore-btn").show();
     } else {
+        $(".question").text(questions[index].question);
+        $(".answerA").text(questions[index].answers[0].text);
+        $(".answerB").text(questions[index].answers[1].text);
+        $(".answerC").text(questions[index].answers[2].text);
+        $(".answerD").text(questions[index].answers[3].text);
     }
   }
-});
+  // Call running questions
+  $("#answer-btns").on("click", runningQuestions);
+  function runningQuestions() {
+      if (index <= (questions.length-1)) {
+          selectedAnswer = event.target.textContent;
+          if(selectedAnswer ==== questions [index].correct) {
+              $(".green-alert").show();
+          }
+          else {
+              time -= 25;
+              $(".red-alert").show();
+          }
+      }
+      else {
+          console.log ("The time is up and quiz is over.");
+      }
+  }
+    // increment score
+    $(".next-btn").on("click", function(){
+
+        if (selectedAnswer === questions[index].correct) {
+            score++;
+            console.log(score);
+        }
+        nextQuestions();
+    
+    });
+    
+    function nextQuestions() {
+        $(".green-alert").hide();
+        $(".red-aler").hide();
+
+        index++;
+            showQuestions();
+    }
+
+    // final scores
+    function lastScore() {
+        var finalScore = ((score / questions.length) * 100);
+        alert ("Final Score: " + finalScore + "%");
+    }
+} )
