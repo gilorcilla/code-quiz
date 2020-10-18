@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
-    <!DOCTYPE html>
-    <html lang="en">
 
-    <head>
+    <!-- required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highscores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script> src = "highscores.js"</script>
+    <title>Code Quiz</title>
 
-        <!-- required meta tags -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Highscores</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script> src = "highscores.js"</script>
-        <title>Code Quiz</title>
-
-    </head>
-    <!-- Body -->
+</head>
+<!-- Body -->
 
 
 <body>
@@ -38,7 +36,33 @@
         <div class="alert alert-danger red-alert" role="alert">
             Incorrect
         </div>
+        <!-- green alert -->
+        <div class="alert alert-success green-alert" role="alert">
+            Correct
+        </div>
+        <!-- questions input -->
+        <div class="card-body question-container" style="padding-right: 5%; padding-left: 30%; align-items: left;">
+            <h5 class="card-title">
+                <div class="question" style="text-align: left;">Question</div>
+            </h5>
+            <!-- answers input -->
+            <div id="answers-btns" class="btn-grid">
 
+                <h4>A.<button class="btn answerA btn-secondary">answer A</button></h4>
+                <h4>B.<button class="btn answerA btn-secondary">answer B</button></h4>
+                <h4>C.<button class="btn answerA btn-secondary">answer C</button></h4>
+                <h4>D.<button class="btn answerA btn-secondary">answer D</button></h4>
+            </div>
+        </div>
+        <!-- footer buttons -->
+        <div class="card-footer text-muted">
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn btn-primary">Start Quiz</button>
+                <button id="next-btn" class="next-btn btn btn-success hide">Next</button>
+                <a href="highscores.html" class="highscore-btn btn btn-info">Enter Highscore</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
