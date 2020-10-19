@@ -16,8 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="index.js"></script>
-    <script src="questions.js"></script>
+
     <title>Code Quiz</title>
 
 </head>
@@ -51,10 +50,10 @@
                 <!-- answers input -->
                 <div id="answers-btns" class="btn-grid">
 
-                    <h4>A.<button class="btn answerA btn-secondary">answer A</button></h4>
-                    <h4>B.<button class="btn answerA btn-secondary">answer B</button></h4>
-                    <h4>C.<button class="btn answerA btn-secondary">answer C</button></h4>
-                    <h4>D.<button class="btn answerA btn-secondary">answer D</button></h4>
+                    <h4>A.<button id="answerA" class="btn answer-btn btn-secondary">answer A</button></h4>
+                    <h4>B.<button id="answerB" class="btn answer-btn btn-secondary">answer B</button></h4>
+                    <h4>C.<button id="answerC" class="btn answer-btn btn-secondary">answer C</button></h4>
+                    <h4>D.<button id="answerD" class="btn answer-btn btn-secondary">answer D</button></h4>
                 </div>
             </div>
             <!-- footer buttons -->
@@ -65,7 +64,12 @@
                     <a href="highscores.html" class="highscore-btn btn btn-info">Enter Highscore</a>
                 </div>
             </div>
+
         </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+        <script src="questions.js"></script>
 </body>
 
 </html>
