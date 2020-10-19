@@ -11,6 +11,7 @@ $(document).ready(function () {
   $(".timer").hide(); // hide time tracker
   $(".green-alert").hide(); // hide green alert
   $(".red-alert").hide(); // hide red alert
+
   // Start Quiz
   $(".start-btn").on("click", function () {
     $(".timer").show(); // show time tracker
@@ -20,6 +21,7 @@ $(document).ready(function () {
     startTimer();
     showQuestions(); // show questions
   });
+
   // Timer
   function startTimer() {
     timeInterval = setInterval(function () {
@@ -34,24 +36,26 @@ $(document).ready(function () {
   }
   // Questions
   function showQuestions() {
-    if (index > questions.length - 1) {
+    if (index == questions.length) {
       console.log("Quiz Over");
       clearInterval(timeInterval);
       lastScore();
       $(".highscore-btn").show();
     } else {
       $(".question").text(questions[index].question);
-      $(".answerA").text(questions[index].answers[0].text);
-      $(".answerB").text(questions[index].answers[1].text);
-      $(".answerC").text(questions[index].answers[2].text);
-      $(".answerD").text(questions[index].answers[3].text);
+      $("#answerA").text(questions[index].answers[0].text);
+      $("#answerB").text(questions[index].answers[1].text);
+      $("#answerC").text(questions[index].answers[2].text);
+      $("#answerD").text(questions[index].answers[3].text);
     }
   }
   // Call running questions
-  $("#answer-btns").on("click", runningQuestions);
+  $(".answer-btn").on("click", runningQuestions);
+
   function runningQuestions() {
     if (index <= questions.length - 1) {
-      selectedAnswer = event.target.textContent;
+      var selectedAnswer = $(this).text();
+      console.log(selectedAnswer);
       if (selectedAnswer === questions[index].correct) {
         $(".green-alert").show();
       } else {
@@ -64,19 +68,22 @@ $(document).ready(function () {
   }
   // increment score
   $(".next-btn").on("click", function () {
-    if (selectedAnswer === questions[index].correct) {
-      score++;
-      console.log(score);
-    }
+    // if (selectedAnswer === questions[index].correct) {
+    //   score++;
+    //   console.log(score);
+    // }
     nextQuestions();
   });
 
   function nextQuestions() {
     $(".green-alert").hide();
-    $(".red-aler").hide();
-
-    index++;
-    showQuestions();
+    $(".red-alert").hide();
+    if (index < questions.length - 1) {
+      index++;
+      showQuestions();
+    } else {
+      lastScore();
+    }
   }
 
   // final scores
