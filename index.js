@@ -11,7 +11,7 @@ $(document).ready(function () {
   $(".timer").hide(); // hide time tracker
   $(".green-alert").hide(); // hide green alert
   $(".red-alert").hide(); // hide red alert
-
+  $(".highscores").hide(); //User input div
   // Start Quiz
   $(".start-btn").on("click", function () {
     $(".timer").show(); // show time tracker
@@ -58,6 +58,7 @@ $(document).ready(function () {
       console.log(selectedAnswer);
       if (selectedAnswer === questions[index].correct) {
         $(".green-alert").show();
+        score = score + 10;
       } else {
         time -= 25;
         $(".red-alert").show();
@@ -88,7 +89,20 @@ $(document).ready(function () {
 
   // final scores
   function lastScore() {
-    var finalScore = (score / questions.length) * 100;
+    var finalScore = score * time;
+    score = finalScore;
     alert("Final Score: " + finalScore + "%");
+    $(".question-container").hide(); // hide question container
+    $(".highscores").show(); //User input div
+    $("#userscore").text("User SCore:" + finalScore);
   }
+  $("#saveUser").on("click", function () {
+    var User = $("#userinitials").val();
+    var storage = JSON.parse(localStorage.getItem("codeQuiz")) || [];
+    storage.push({
+      user: User,
+      score: score,
+    });
+    localStorage.setItem("codeQuiz", JSON.stringify(storage));
+  });
 });
