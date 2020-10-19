@@ -33,7 +33,7 @@ const questions = [
   },
   {
     question: "Which of the following is ot reserved word in JavaScript?",
-    answer: [
+    answers: [
       { text: "interface" },
       { text: "throws" },
       { text: "program" },
@@ -44,7 +44,7 @@ const questions = [
   {
     question:
       "What is the HTML tag under which one can write the JavaScript code?",
-    answer: [
+    answers: [
       { text: "<javascript>" },
       { text: "<scripted>" },
       { text: "<script>" },
@@ -55,7 +55,7 @@ const questions = [
   {
     question:
       "Which of the following function of string object combines the text of two strings and returns a new string?",
-    answer: [
+    answers: [
       { text: "concat()" },
       { text: "add()" },
       { text: "merge()" },
@@ -65,12 +65,12 @@ const questions = [
   },
   {
     question: "Which operator is used to assign a value to a variable?",
-    answer: [{ text: "-" }, { text: "X" }, { text: "*" }, { text: "=" }],
+    answers: [{ text: "-" }, { text: "X" }, { text: "*" }, { text: "=" }],
     correct: "=",
   },
   {
     question: "How to add comments in JavaScript?",
-    answer: [
+    answers: [
       { text: "//This is a comment" },
       { text: "<!--This is a comment-->" },
       { text: "/*This is a comment*/" },
@@ -81,7 +81,7 @@ const questions = [
   {
     question:
       "What is the syntax for creating a function in JavaSCript named booFunction?",
-    answer: [
+    answers: [
       { text: "function: = booFunction()" },
       { text: "function+ booFunction()" },
       { text: "function = booFunction()" },
@@ -91,7 +91,7 @@ const questions = [
   },
   {
     question: "How to call a function in JavaScript?",
-    answer: [
+    answers: [
       { text: "booFunction();" },
       { text: "function call booFunction();" },
       { text: "Function();" },
