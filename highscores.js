@@ -20,7 +20,7 @@ function renderInitials() {
 function init() {
   var storedInitials = JSON.parse(localStorage.getItem("initialsScores"));
   if (storedInitials !== null) {
-      initialsScores = storedInitials;
+    initialsScores = storedInitials;
   }
   renderInitials();
 }
@@ -32,14 +32,13 @@ initialsForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   var initialsText = initialsInput.nodeValue.trim();
-  If (initialsText === "") {
-      return;
+  If(initialsText === "");
+  {
+    return;
   }
-  initialsScores.push(inititialsText)
+  initialsScores.push(inititialsText);
   initialsInput.value = "";
-  
+
   storeInitials();
   renderInitials();
-
-
 });
