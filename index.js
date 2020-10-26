@@ -89,10 +89,11 @@ $(document).ready(function () {
 
   // final scores
   function lastScore() {
-    var finalScore = score * time;
+    var finalScore = score * time /10;
     score = finalScore;
     alert("Final Score: " + finalScore + "%");
     $(".question-container").hide(); // hide question container
+    $(".next-btn").hide()
     $(".highscores").show(); //User input div
     $("#userscore").text("User SCore:" + finalScore);
   }
